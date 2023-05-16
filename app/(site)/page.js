@@ -20,7 +20,7 @@ export default function Auth() {
             height="50"
             width="50"
             className="mx-auto w-auto"
-            src="/images/logo.png"
+            src="/images/logo3.png"
             alt="Logo"
           />
           <h2
@@ -30,7 +30,7 @@ export default function Auth() {
           text-3xl 
           font-bold 
           tracking-tight 
-            text-white
+            text-[#1e2f58]
           "
           >
             Box Scheduler

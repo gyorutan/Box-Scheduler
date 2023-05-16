@@ -1,19 +1,28 @@
-import React from "react";
-import { BiArrowBack } from "react-icons/bi";
+import { useRouter } from "next/navigation";
+import Image from "next/image";
 
-export default function Header() {
+export default function Header({ label }) {
+  // const label = pathname.split("/")[1].charAt(0).toUpperCase() + pathname.slice(2)
+  const router = useRouter();
+
   return (
-    <div className="border-b-[1px] border-neutral-800 p-3">
+    <div className="border-b-2 border-[#1e2f58] p-2">
       <div className="flex flex-row items-center gap-2">
-        <BiArrowBack
-          size={20}
+        <Image
+          onClick={() => router.back(-1)}
+          src={'/images/arrow.png'}
+          width={30}
+          height={30}
+          alt="<"
           className="
+          p-1
+              rounded-full
               cursor-pointer 
-              hover:bg-gray-300
+              hover:bg-gray-200
               transition
           "
         />
-        <h1 className="text-white text-xl font-semibold">헤더이름</h1>
+        <h1 className="text-black text-xl font-bold ml-2">{label}</h1>
       </div>
     </div>
   );

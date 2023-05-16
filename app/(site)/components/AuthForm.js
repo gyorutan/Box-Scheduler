@@ -57,14 +57,12 @@ export default function AuthForm() {
         if (result.success) {
           toast.success("회원가입 성공!", {
             duration: 2000,
-            position: "bottom-left",
           });
           inputReset();
           toggleVariant();
         } else {
           toast.error("회원가입 실패!", {
             duration: 2000,
-            position: "bottom-left",
           });
           inputReset();
         }
@@ -83,18 +81,16 @@ export default function AuthForm() {
           body: JSON.stringify(formData),
         });
         const result = await response.json();
-        console.log(result);
+        // console.log(result);
         if (result.success) {
           toast.success("로그인 성공!", {
             duration: 1500,
-            position: "bottom-left",
           });
           localStorage.setItem("USER", result.token);
           router.push("/home");
         } else {
           toast.error("아이디 또는 비밀번호가 다릅니다!", {
             duration: 2000,
-            position: "bottom-left",
           });
           inputReset();
         }
@@ -121,38 +117,38 @@ export default function AuthForm() {
               <input
                 required
                 type="text"
-                placeholder="Username"
+                placeholder="닉네임"
                 value={username}
                 onChange={(e) => {
                   setUsername(e.target.value);
                 }}
-                className="text-white focus:ring-2 bg-gray-800 focus:ring-gray-300 block w-full rounded-md py-2 px-3 mb-5"
+                className="text-white focus:ring-2 bg-[#1e2f58] focus:ring-white  block w-full rounded-md py-2 px-3 mb-5"
               />
             )}
             <input
               required
               type="text"
-              placeholder="Login ID"
+              placeholder="아이디"
               value={loginId}
               onChange={(e) => {
                 setLoginId(e.target.value);
               }}
-              className="text-white focus:ring-2 bg-gray-800 focus:ring-gray-300 block w-full rounded-md py-2 px-3 mb-5"
+              className="text-white  focus:ring-2 bg-[#1e2f58] focus:ring-white block w-full rounded-md py-2 px-3 mb-5"
             />
             <input
               required
               type="password"
-              placeholder="Password"
+              placeholder="비밀번호"
               value={loginPw}
               onChange={(e) => {
                 setLoginPw(e.target.value);
               }}
-              className="text-white focus:ring-2 bg-gray-800 focus:ring-gray-300 block w-full rounded-md py-2 px-3 mb-5"
+              className="text-white  focus:ring-2 bg-[#1e2f58] focus:ring-white  block w-full rounded-md py-2 px-3 mb-5"
             />
             <div className="text-center">
               <button
                 type="submit"
-                className="hover:bg-gray-400 bg-gray-900 text-gray-300 hover:text-black px-4 py-2 mt-3 rounded-md"
+                className="hover:bg-gray-200 bg-[#1e2f58] text-gray-200 hover:text-black px-4 py-2 mt-3 rounded-md"
               >
                 {variant === "LOGIN" ? "로그인" : "회원가입"}
               </button>
@@ -169,12 +165,12 @@ export default function AuthForm() {
             text-gray-500
           "
         >
-          <div className="text-white">
+          <div className="text-black">
             {variant === "LOGIN" ? "회원이 아니신가요?" : "계정이 있으신가요?"}
           </div>
           <div
             onClick={toggleVariant}
-            className="text-white hover:text-sky-400 cursor-pointer"
+            className="text-black hover:text-gray-200 cursor-pointer"
           >
             {variant === "LOGIN" ? "회원가입" : "로그인"}
           </div>
