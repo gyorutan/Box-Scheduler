@@ -21,7 +21,7 @@ const Sidebar = () => {
     router.push("/");
   };
   return (
-    <div className="flex flex-col h-screen lg:w-60 md:w-40 w-20 bg-[#1e2f58] text-gray-100">
+    <div className="flex flex-col lg:w-60 md:w-40 w-20 bg-[#1e2f58] text-gray-100">
       <div className="px-4 py-3 font-bold">
         <Link href={"/home"}>
           <div className="flex justify-center gap-2 items-center md:justify-end">
