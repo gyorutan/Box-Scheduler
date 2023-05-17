@@ -29,7 +29,7 @@ export default function Layout({ children }) {
         <>{children}</>
       ) : (
         <>
-          <div className="flex">
+          <div className="h-full flex">
             <Sidebar />
             <div className="w-full">
               <Header label={label} />
