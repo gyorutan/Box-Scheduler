@@ -21,7 +21,7 @@ const Sidebar = () => {
     router.push("/");
   };
   return (
-    <div className="flex flex-col lg:w-60 md:w-40 w-20 bg-[#1e2f58] text-gray-100">
+    <div className="flex flex-col lg:w-60 md:w-40 w-20 bg-[#394867] text-gray-100">
       <div className="px-4 py-3 font-bold">
         <Link href={"/home"}>
           <div className="flex justify-center gap-2 items-center md:justify-end">
@@ -39,13 +39,13 @@ const Sidebar = () => {
       </div>
       <div>
         <Link href={"/home"}>
-          <div className="px-4 py-3 hover:bg-[#6dc4db] flex justify-center gap-2 items-center md:justify-end">
+          <div className="px-4 py-3 hover:bg-[#212A3E] flex justify-center gap-2 items-center md:justify-end">
             <span className="hidden lg:block">홈페이지</span>
             <Image height="30" width="30" src="/images/home.png" alt="Logo" />
           </div>
         </Link>
         <Link href={"/schedule"}>
-          <div className="px-4 py-3 hover:bg-[#6dc4db] flex justify-center gap-2 items-center md:justify-end">
+          <div className="px-4 py-3 hover:bg-[#212A3E] flex justify-center gap-2 items-center md:justify-end">
             <span className="hidden lg:block">스케쥴</span>
             <Image
               height="30"
@@ -58,14 +58,14 @@ const Sidebar = () => {
       </div>
       <div>
       <Link href={`/user/${currentUser._id}`}>
-          <div className="px-4 py-3 hover:bg-[#6dc4db] flex justify-center gap-2 items-center md:justify-end">
+          <div className="px-4 py-3 hover:bg-[#212A3E] flex justify-center gap-2 items-center md:justify-end">
             <span className="hidden lg:block">{currentUser.username}</span>
             <Image height="30" width="30" className="rounded-full" src={`${currentUser?.image || "/images/placeholder.jpg"}`} alt="Logo" />
           </div>
         </Link>
         <button
           onClick={logout}
-          className="w-full px-4 py-3 hover:bg-[#6dc4db] flex justify-center md:justify-end items-center gap-2"
+          className="w-full px-4 py-3 hover:bg-[#212A3E] flex justify-center md:justify-end items-center gap-2"
         >
           <span className="hidden lg:block">로그아웃</span>
           <div>

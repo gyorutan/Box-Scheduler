@@ -15,14 +15,13 @@ export default function Header({ label }) {
           height={30}
           alt="<"
           className="
-          p-1
               rounded-full
               cursor-pointer 
               hover:bg-gray-200
               transition
           "
         />
-        <h1 className="text-black text-xl font-bold ml-2">{label}</h1>
+        <h1 className="text-black text-xl font-bold">{label}</h1>
       </div>
     </div>
   );

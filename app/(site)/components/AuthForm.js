@@ -122,7 +122,8 @@ export default function AuthForm() {
                 onChange={(e) => {
                   setUsername(e.target.value);
                 }}
-                className="text-white focus:ring-2 bg-[#1e2f58] focus:ring-white  block w-full rounded-md py-2 px-3 mb-5"
+                className="text-black bg-gray-200 placeholder:text-gray-400 rounded-md block w-full py-2 px-3 mb-5"
+                style={{ boxShadow: "inset 0 2px 4px 0 rgb(0 0 0 / 0.15)" }}
               />
             )}
             <input
@@ -133,8 +134,9 @@ export default function AuthForm() {
               onChange={(e) => {
                 setLoginId(e.target.value);
               }}
-              className="text-white  focus:ring-2 bg-[#1e2f58] focus:ring-white block w-full rounded-md py-2 px-3 mb-5"
-            />
+              className="text-black bg-gray-200 placeholder:text-gray-400 rounded-md block w-full py-2 px-3 mb-5"
+              style={{ boxShadow: "inset 0 2px 4px 0 rgb(0 0 0 / 0.15)" }}
+              />
             <input
               required
               type="password"
@@ -143,12 +145,13 @@ export default function AuthForm() {
               onChange={(e) => {
                 setLoginPw(e.target.value);
               }}
-              className="text-white  focus:ring-2 bg-[#1e2f58] focus:ring-white  block w-full rounded-md py-2 px-3 mb-5"
+              className="text-black bg-gray-200 placeholder:text-gray-400 rounded-md block w-full py-2 px-3 mb-5"
+              style={{ boxShadow: "inset 0 2px 4px 0 rgb(0 0 0 / 0.15)" }}
             />
             <div className="text-center">
               <button
                 type="submit"
-                className="hover:bg-gray-200 bg-[#1e2f58] text-gray-200 hover:text-black px-4 py-2 mt-3 rounded-md"
+                className="text-black bg-gray-300 hover:text-white rounded-md px-4 py-2 mt-3"
               >
                 {variant === "LOGIN" ? "로그인" : "회원가입"}
               </button>
@@ -170,7 +173,7 @@ export default function AuthForm() {
           </div>
           <div
             onClick={toggleVariant}
-            className="text-black hover:text-gray-200 cursor-pointer"
+            className="text-black hover:text-[#9BA4B5] cursor-pointer"
           >
             {variant === "LOGIN" ? "회원가입" : "로그인"}
           </div>

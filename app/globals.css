@@ -19,10 +19,10 @@ input:focus {
 }
 
 :root {
-  @apply h-full bg-[#6dc4db];
+  @apply h-full bg-[#F1F6F9];
 }
 
 body {
   min-width: 300px;
-  @apply h-full bg-[#6dc4db];
+  @apply h-full bg-[#F1F6F9];
 }
