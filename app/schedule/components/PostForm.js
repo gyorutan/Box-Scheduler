@@ -40,6 +40,11 @@ export default function PostForm() {
         duration: 2000,
       });
       router.push("/home");
+    } else {
+      toast.error("保存できませんでした！", {
+        duration: 2000,
+      });
+      return
     }
   };
 
