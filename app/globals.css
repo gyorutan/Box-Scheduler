@@ -1,16 +1,10 @@
-@font-face {
-  font-family: 'NanumSquareNeo-Variable';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-}
-
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 * {
-  font-family: 'NanumSquareNeo-Variable';
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
 
@@ -19,10 +13,12 @@ input:focus {
 }
 
 :root {
+  /* font-weight: bolder; */
   @apply h-full bg-[#F1F6F9];
 }
 
 body {
+  /* font-weight: bolder; */
   min-width: 300px;
-  @apply h-full bg-[#F1F6F9];
+  @apply bg-[#F1F6F9];
 }

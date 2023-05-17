@@ -1,8 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import Sidebar from "./Sidebar";
-import Header from "./Header";
+import Sidebar from "./Sidebar";;
 import { usePathname } from "next/navigation";
 import { getUserToken } from "../hooks/getUserToken";
 
@@ -32,7 +31,6 @@ export default function Layout({ children }) {
           <div className="h-full flex">
             <Sidebar />
             <div className="w-full">
-              <Header label={label} />
               <main>{children}</main>
             </div>
           </div>

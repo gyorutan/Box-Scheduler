@@ -1,10 +1,12 @@
 import React from "react";
 import PostForm from "./components/PostForm";
+import Header from "../components/Header";
 
 export default function Schedule() {
+  const label = "スケジュール作成"
   return (
-    <div className="p-3">
-      <div className="text-xl">스케쥴 작성</div>
+    <div className="h-full">
+      <Header label={label}/>
       <PostForm />
     </div>
   );

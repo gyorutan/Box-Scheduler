@@ -6,7 +6,7 @@ export default function Auth() {
     <div
       className="
       flex 
-      min-h-full 
+      h-screen 
       flex-col 
       justify-center 
       py-12 
@@ -14,7 +14,7 @@ export default function Auth() {
       lg:px-8 
       "
     >
-      <div className="mb-20">
+      <div className="mb-12">
         <div className="sm:mx-auto sm:w-full sm:max-w-md">
           <Image
             height="50"

@@ -55,13 +55,13 @@ export default function AuthForm() {
         });
         const result = await response.json();
         if (result.success) {
-          toast.success("회원가입 성공!", {
+          toast.success("登録できますた!", {
             duration: 2000,
           });
           inputReset();
           toggleVariant();
         } else {
-          toast.error("회원가입 실패!", {
+          toast.error("登録できませんでした!", {
             duration: 2000,
           });
           inputReset();
@@ -83,13 +83,13 @@ export default function AuthForm() {
         const result = await response.json();
         // console.log(result);
         if (result.success) {
-          toast.success("로그인 성공!", {
+          toast.success("ログイン成功!", {
             duration: 1500,
           });
           localStorage.setItem("USER", result.token);
           router.push("/home");
         } else {
-          toast.error("아이디 또는 비밀번호가 다릅니다!", {
+          toast.error("ログアウト情報が一致しません!", {
             duration: 2000,
           });
           inputReset();
@@ -118,7 +118,7 @@ export default function AuthForm() {
                 disabled={isLoading}
                 required
                 type="text"
-                placeholder="닉네임"
+                placeholder="ハンドルネーム"
                 value={username}
                 onChange={(e) => {
                   setUsername(e.target.value);
@@ -131,7 +131,7 @@ export default function AuthForm() {
               disabled={isLoading}
               required
               type="text"
-              placeholder="아이디"
+              placeholder="Login ID"
               value={loginId}
               onChange={(e) => {
                 setLoginId(e.target.value);
@@ -143,7 +143,7 @@ export default function AuthForm() {
               disabled={isLoading}
               required
               type="password"
-              placeholder="비밀번호"
+              placeholder="Password"
               value={loginPw}
               onChange={(e) => {
                 setLoginPw(e.target.value);
@@ -157,7 +157,7 @@ export default function AuthForm() {
                 type="submit"
                 className="text-black bg-gray-300 hover:text-white rounded-md px-4 py-2 mt-3"
               >
-                {variant === "LOGIN" ? "로그인" : "회원가입"}
+                {variant === "LOGIN" ? "ログイン" : "登録"}
               </button>
             </div>
           </form>
@@ -173,13 +173,13 @@ export default function AuthForm() {
           "
         >
           <div className="text-black">
-            {variant === "LOGIN" ? "회원이 아니신가요?" : "계정이 있으신가요?"}
+            {variant === "LOGIN" ? "アカウントを持ってない方" : "アカウントを持っている方"}
           </div>
           <div
             onClick={toggleVariant}
             className="text-black hover:text-[#9BA4B5] cursor-pointer"
           >
-            {variant === "LOGIN" ? "회원가입" : "로그인"}
+            {variant === "LOGIN" ? "新規登録" : "ログイン"}
           </div>
         </div>
       </div>
