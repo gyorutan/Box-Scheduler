@@ -7,10 +7,6 @@ export default function PostForm() {
   const [startTime, setStartTime] = useState("");
   const [endTime, setEndTime] = useState("");
   const [memo, setMemo] = useState("");
-  console.log(date);
-  console.log(startTime);
-  console.log(endTime);
-  console.log(memo);
 
   const handleReset = () => {
     setDate("");

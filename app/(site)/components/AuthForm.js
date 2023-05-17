@@ -115,6 +115,7 @@ export default function AuthForm() {
           <form className="space-y-5" onSubmit={handleSubmit}>
             {variant === "REGISTER" && (
               <input
+                disabled={isLoading}
                 required
                 type="text"
                 placeholder="닉네임"
@@ -127,6 +128,7 @@ export default function AuthForm() {
               />
             )}
             <input
+              disabled={isLoading}
               required
               type="text"
               placeholder="아이디"
@@ -136,8 +138,9 @@ export default function AuthForm() {
               }}
               className="text-black bg-gray-200 placeholder:text-gray-400 rounded-md block w-full py-2 px-3 mb-5"
               style={{ boxShadow: "inset 0 2px 4px 0 rgb(0 0 0 / 0.15)" }}
-              />
+            />
             <input
+              disabled={isLoading}
               required
               type="password"
               placeholder="비밀번호"
@@ -150,6 +153,7 @@ export default function AuthForm() {
             />
             <div className="text-center">
               <button
+                disabled={isLoading}
                 type="submit"
                 className="text-black bg-gray-300 hover:text-white rounded-md px-4 py-2 mt-3"
               >
