@@ -15,9 +15,13 @@ export default function PostForm() {
     setMemo("");
   };
 
+  const handleSubmit = async () => {
+    
+  }
+
   return (
     <>
-      <form className="mt-3">
+      <form className="mt-3" onSubmit={handleSubmit}>
         <p>사용할 날짜</p>
         <input
           required
