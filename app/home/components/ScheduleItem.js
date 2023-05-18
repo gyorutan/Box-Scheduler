@@ -3,6 +3,7 @@
 import { getUserToken } from "@/app/hooks/getUserToken";
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
+import { toast } from "react-hot-toast";
 
 export default function ScheduleItem() {
   const [schedules, setSchedules] = useState([]);
@@ -19,8 +20,21 @@ export default function ScheduleItem() {
   const getSchedule = async () => {
     const response = await fetch("/api/schedule");
     const result = await response.json();
-    console.log(result);
     setSchedules(result);
+  };
+
+  const deleteSchedule = async (id) => {
+    const postId = id;
+    console.log(postId);
+    const response = await fetch(`/api/delete`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ postId: postId }),
+    });
+    const result = await response.json();
+    if (result.success) {
+      getSchedule(); 
+    }
   };
 
   return (
@@ -39,14 +53,21 @@ export default function ScheduleItem() {
                   </div>
                   <div>
                     <div>
-                      <button className="cursor-pointer">
-                        <Image
-                          width={28}
-                          height={28}
-                          src={"/images/delete.png"}
-                          alt="Delete"
-                        />
-                      </button>
+                      {schedule.user.username === currentUser ? (
+                        <button
+                          className="cursor-pointer hover:bg-red-400 rounded-full"
+                          onClick={() => {
+                            deleteSchedule(schedule._id);
+                          }}
+                        >
+                          <Image
+                            width={28}
+                            height={28}
+                            src={"/images/delete.png"}
+                            alt="Delete"
+                          />
+                        </button>
+                      ) : null}
                     </div>
                   </div>
                 </div>
